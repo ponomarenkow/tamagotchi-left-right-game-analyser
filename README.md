@@ -2,10 +2,11 @@
 
 I love gen 1 pet, but the minigame is extremely frustrating. You'd like to have any control over wheter you win or not, but it's not clear what are you supposed to do to achieve that. I've heard a lot of conflicting theories. Some say it's completely random, 50% chance if you get left or right this time, others say you have to press the button in timing with tamagotchi's animation. Others say that there's a set of left-right combinations that is determined at the begining of the game, and yet others that there are combinations specific to certain characters, with mametchi knowing them all, and maskutchi the least.
 
-Since many of those convictions might have originated in confirmation bias out of our desperation to feel at least a little bit in control, I set out to verify them in scientific manner. However, keeping track of everything in a text editor became exhausting. At first I gave up, then I tried again, got exhausted again, and then I remembered I'm a programmer, so I quickly coded something that would do this job way easier. So here I am, bringing y'all my conclusions and a tool you may use if you want to test this for yourself.
+Since many of those convictions might have originated in confirmation bias rooted in our desperation to feel at least a little bit in control, I set out to verify them in a scientific manner. However, keeping track of everything in a text editor became exhausting. At first I gave up, then I tried again, got exhausted again, and then I remembered I'm a programmer, so I quickly coded something that would do this job way easier. So here I am, bringing y'all my conclusions and a tool you may use if you want to test this for yourself.
 
 ## Methods
 H0: All of 32 combinations are equally probable. Distribution is uniform and the chance to win by pressing only A button is 50%.
+
 H1: Combinations are not equally probable. For certain character some set of combinations will never appear.
 
 Binomial test was used for the final outcome (left or right winning), and Chi square test for distribution of combinations.
@@ -34,7 +35,7 @@ I didn't analise the order of the combinations, but at the first glance there do
 **All in all, it seems the most logical to conclude that, unfortunately, it is just 50% chance for getting left or right at any given time, although possibility of tamagotchi's movement at the time of click or other factor influencing the result cannot be exluded.**
 
 ## Limitations
-A very huge limitation is a mistake I made in code, not realising that Python does, in fact, treat 0 as equal to False. This caused left-only combinations to not be registered at all for Maskutchi, Babytchi and Marutchi until I fixed it (Mametchi was unaffected, since their data was not imported by the program). But given the results we already have, I don't think it would change much, and I am not doing it all over again.
+A very huge limitation is a mistake I made in code, not realising that Python does, in fact, treat 0 as equal to False. This caused left-only combinations to not be registered at all for Maskutchi, Babytchi and Marutchi until I fixed it (Mametchi was unaffected, since their data was not inputter through the program). But given the results we already have, I don't think it would change much, and I am not doing it all over again.
 
 Another limitation is the fact that I sometimes played with my tama to fill their hearts without registering the results I got, and the possibility that I could do some mistakes in typing (that was a lot of typing), although I always tried to confirm with the amount of wins and loses I got at the end of each game.
 
